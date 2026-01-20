@@ -37,7 +37,7 @@ modules:
       copr:
         - atim/starship
       files:
-        - https://repos.fyralabs.com/terra42/terra.repo
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     install:
       packages:
         - alacritty
