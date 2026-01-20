@@ -26,6 +26,8 @@ modules:
         - zram-generator@zram0.service
       masked:
         - zram-generator@zram0.service
+      enabled:
+        - niri.service
 
   # Copy zswap configuration file
   - type: files
@@ -54,6 +56,7 @@ modules:
         - tmux
         - zsh
         - noctalia-shell
+        - niri
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
