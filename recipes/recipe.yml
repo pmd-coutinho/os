@@ -60,7 +60,7 @@ modules:
 
   - type: gnome-extensions
     install:
-      - PaperWM  # https://extensions.gnome.org/extension/6099/paperwm/
+      - 6099  # https://extensions.gnome.org/extension/6099/paperwm/
 
   - type: brew
     brew-analytics: false
