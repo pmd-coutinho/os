@@ -69,8 +69,6 @@ modules:
         - zram-generator@zram0.service
       masked:
         - zram-generator@zram0.service
-      enabled:
-        - niri.service
 
   - type: default-flatpaks
     configurations:
