@@ -19,16 +19,6 @@ modules:
       - xone
     nvidia-driver: "nvidia-open"  # or "nvidia-open" for newer GPUs
 
-  # Disable and mask zram service
-  - type: systemd
-    system:
-      disabled:
-        - zram-generator@zram0.service
-      masked:
-        - zram-generator@zram0.service
-      enabled:
-        - niri.service
-
   # Copy zswap configuration file
   - type: files
     files:
@@ -71,6 +61,16 @@ modules:
   - type: brew
     brew-analytics: false
     nofile-limits: true
+
+  # Disable and mask zram service
+  - type: systemd
+    system:
+      disabled:
+        - zram-generator@zram0.service
+      masked:
+        - zram-generator@zram0.service
+      enabled:
+        - niri.service
 
   - type: default-flatpaks
     configurations:
