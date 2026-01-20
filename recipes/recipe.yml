@@ -39,6 +39,7 @@ modules:
         - atim/starship
     install:
       packages:
+        - alacritty
         - micro
         - starship
         - tmux
@@ -50,6 +51,10 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+  - type: gnome-extensions
+    install:
+      - PaperWM  # https://extensions.gnome.org/extension/6099/paperwm/
+
   - type: brew
     brew-analytics: false
     nofile-limits: true
@@ -60,7 +65,7 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - io.alacritty.Alacritty
+          - com.bitwarden.desktop
           - com.slack.Slack
           - com.vivaldi.Vivaldi
           - com.getpostman.Postman
