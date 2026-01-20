@@ -33,6 +33,13 @@ modules:
       - source: system/etc/modprobe.d/zswap.conf
         dest: /etc/modprobe.d/zswap.conf
 
+  - type: kargs
+    kargs:
+      - zswap.enabled=1
+      - zswap.compressor=zstd
+      - zswap.max_pool_percent=25
+      - zswap.zpool=z3fold
+
   - type: dnf
     repos:
       copr:
@@ -80,8 +87,3 @@ modules:
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-kargs:
-  - zswap.enabled=1
-  - zswap.compressor=zstd
-  - zswap.max_pool_percent=25
-  - zswap.zpool=z3fold
