@@ -12,19 +12,25 @@ image-version: 42 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+  - type: akmods
+    base: main
+    install:
+      - nvidia  # optional, just an example
+    nvidia-driver: "nvidia-open"  # or "nvidia-open" for newer GPUs
 
-  - type: script
-    scripts:
-      - chmod +x /usr/local/bin/setup-neovim.sh
+  #- type: files
+  #  files:
+  #    - source: system
+  #      destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: systemd
-    user:
-      enabled:
-        - neovim-setup.service
+  #- type: script
+  #  scripts:
+  #    - chmod +x /usr/local/bin/setup-neovim.sh
+
+  #- type: systemd
+  #  user:
+  #    enabled:
+  #      - neovim-setup.service
 
   - type: dnf
     repos:
