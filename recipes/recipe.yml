@@ -32,6 +32,8 @@ modules:
       - zswap.max_pool_percent=25
       - zswap.zpool=z3fold
 
+  - type: initramfs
+
   - type: dnf
     repos:
       copr:
