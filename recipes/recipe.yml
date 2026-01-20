@@ -30,8 +30,8 @@ modules:
   # Copy zswap configuration file
   - type: files
     files:
-      - source: system/etc/modprobe.d/zswap.conf
-        dest: /etc/modprobe.d/zswap.conf
+      - source: system
+        destination: /
 
   - type: kargs
     kargs:
