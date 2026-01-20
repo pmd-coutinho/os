@@ -44,6 +44,8 @@ modules:
     repos:
       copr:
         - atim/starship
+      files:
+        - https://repos.fyralabs.com/terra42/terra.repo
     install:
       packages:
         - alacritty
@@ -51,6 +53,7 @@ modules:
         - starship
         - tmux
         - zsh
+        - noctalia-shell
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
