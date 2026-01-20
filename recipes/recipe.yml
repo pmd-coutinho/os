@@ -15,7 +15,8 @@ modules:
   - type: akmods
     base: main
     install:
-      - nvidia  # optional, just an example
+      - v4l2loopback  # optional, just an example
+      - xone
     nvidia-driver: "nvidia-open"  # or "nvidia-open" for newer GPUs
 
   #- type: files
