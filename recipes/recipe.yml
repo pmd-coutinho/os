@@ -12,12 +12,14 @@ image-version: 42 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: akmods
-    base: main
-    install:
-      - v4l2loopback  # optional, just an example
-      - xone
-    nvidia-driver: "nvidia-open"  # or "nvidia-open" for newer GPUs
+  # NVIDIA driver disabled for VM compatibility
+  # Uncomment for physical hardware with NVIDIA GPU
+  # - type: akmods
+  #   base: main
+  #   install:
+  #     - v4l2loopback  # optional, just an example
+  #     - xone
+  #   nvidia-driver: "nvidia-open"  # or "nvidia-open" for newer GPUs
 
   # Copy zswap configuration file
   - type: files
